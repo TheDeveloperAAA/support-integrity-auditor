@@ -34,8 +34,6 @@ def deploy_github():
                        capture_output=True, text=True)
     print(f"[github] create repo -> HTTP {r.stdout}  (201=created, 422=already exists)")
 
-    url = f"https://github.com/{GH_USER}/{repo}.git"
-    hdr = f"http.extraheader=AUTHORIZATION: bearer {gh}"
     def git(*args, check=True):
         return subprocess.run(["git", "-c", "user.email=sia@local",
                                "-c", "user.name=SIA Bot", *args],
@@ -43,7 +41,9 @@ def deploy_github():
     git("add", "-A")
     git("commit", "-m", "Support Integrity Auditor — full pipeline, app, artifacts", check=False)
     git("branch", "-M", "main")
-    push = subprocess.run(["git", "-c", hdr, "push", "--force", url, "main"],
+    # GitHub git-over-HTTPS uses Basic auth (token in URL), not a Bearer header.
+    auth_url = f"https://x-access-token:{gh}@github.com/{GH_USER}/{repo}.git"
+    push = subprocess.run(["git", "push", "--force", auth_url, "main"],
                           cwd=ROOT, capture_output=True, text=True)
     if push.returncode == 0:
         print(f"[github] pushed -> https://github.com/{GH_USER}/{repo}")
