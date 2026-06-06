@@ -11,11 +11,11 @@ pseudo-labels, and generalizes to unseen and adversarial tickets.
 
 | Held-out verification gate | Required | Achieved |
 |---|---|---|
-| Binary accuracy | ≥ 83% | **91.50%** ✅ |
-| Macro F1 | ≥ 0.82 | **0.874** ✅ |
-| Per-class recall (both) | ≥ 0.78 | **0.909** / **0.944** ✅ |
-| Adversarial robustness (bonus) | ≥ 7/10 | **8/10** ✅ (+10%) |
-| Dossier hallucinations | 0 | **0** ✅ |
+| Binary accuracy | ≥ 83% | **91.50%**  |
+| Macro F1 | ≥ 0.82 | **0.874** |
+| Per-class recall (both) | ≥ 0.78 | **0.909** / **0.944** |
+| Adversarial robustness (bonus) | ≥ 7/10 | **8/10**  (+10%) |
+| Dossier hallucinations | 0 | **0** |
 
 ---
 
