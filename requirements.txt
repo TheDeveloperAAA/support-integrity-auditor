@@ -13,7 +13,7 @@ transformers==5.10.2
 tokenizers==0.22.2
 safetensors==0.7.0
 sentencepiece==0.2.1
-protobuf==7.35.0
+protobuf==4.25.5   # <7 to satisfy streamlit 1.55; distilroberta/MiniLM don't need protobuf
 accelerate==1.13.0
 peft==0.19.1
 datasets==5.0.0
