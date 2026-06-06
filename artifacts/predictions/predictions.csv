@@ -1,0 +1,11 @@
+Ticket_ID,Priority_Level,inferred_level,pred_mismatch,mismatch_type,pred_prob_mismatch
+ADV-001,Critical,Medium,1,False Alarm,0.013791238
+ADV-002,High,Low,1,False Alarm,0.015117843
+ADV-003,Low,Medium,0,Hidden Crisis,0.251752
+ADV-004,Low,Medium,1,Hidden Crisis,0.8148896
+ADV-005,Medium,Medium,0,Hidden Crisis,0.00033677035
+ADV-006,Low,High,1,Hidden Crisis,0.9905749
+ADV-007,Low,Medium,1,Hidden Crisis,0.9620173
+ADV-008,Low,Low,0,False Alarm,0.0004634106
+ADV-009,Critical,High,0,False Alarm,0.0028627622
+ADV-010,Critical,Medium,1,False Alarm,0.01621238

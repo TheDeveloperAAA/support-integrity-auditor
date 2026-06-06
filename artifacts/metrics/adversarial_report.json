@@ -1,0 +1,88 @@
+{
+  "score": 8,
+  "total": 10,
+  "hallucinations": 0,
+  "bonus_earned": true,
+  "detail": [
+    {
+      "id": "ADV-001",
+      "expected": "MISMATCH",
+      "exp_type": "False Alarm",
+      "pred": "MISMATCH",
+      "pred_type": "False Alarm",
+      "ok": "\u2705"
+    },
+    {
+      "id": "ADV-002",
+      "expected": "MISMATCH",
+      "exp_type": "False Alarm",
+      "pred": "MISMATCH",
+      "pred_type": "False Alarm",
+      "ok": "\u2705"
+    },
+    {
+      "id": "ADV-003",
+      "expected": "MISMATCH",
+      "exp_type": "Hidden Crisis",
+      "pred": "consistent",
+      "pred_type": "\u2014",
+      "ok": "\u274c"
+    },
+    {
+      "id": "ADV-004",
+      "expected": "MISMATCH",
+      "exp_type": "Hidden Crisis",
+      "pred": "MISMATCH",
+      "pred_type": "Hidden Crisis",
+      "ok": "\u2705"
+    },
+    {
+      "id": "ADV-005",
+      "expected": "MISMATCH",
+      "exp_type": "Hidden Crisis",
+      "pred": "consistent",
+      "pred_type": "\u2014",
+      "ok": "\u274c"
+    },
+    {
+      "id": "ADV-006",
+      "expected": "MISMATCH",
+      "exp_type": "Hidden Crisis",
+      "pred": "MISMATCH",
+      "pred_type": "Hidden Crisis",
+      "ok": "\u2705"
+    },
+    {
+      "id": "ADV-007",
+      "expected": "MISMATCH",
+      "exp_type": "Hidden Crisis",
+      "pred": "MISMATCH",
+      "pred_type": "Hidden Crisis",
+      "ok": "\u2705"
+    },
+    {
+      "id": "ADV-008",
+      "expected": "consistent",
+      "exp_type": "\u2014",
+      "pred": "consistent",
+      "pred_type": "\u2014",
+      "ok": "\u2705"
+    },
+    {
+      "id": "ADV-009",
+      "expected": "consistent",
+      "exp_type": "\u2014",
+      "pred": "consistent",
+      "pred_type": "\u2014",
+      "ok": "\u2705"
+    },
+    {
+      "id": "ADV-010",
+      "expected": "MISMATCH",
+      "exp_type": "False Alarm",
+      "pred": "MISMATCH",
+      "pred_type": "False Alarm",
+      "ok": "\u2705"
+    }
+  ]
+}

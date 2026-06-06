@@ -1,0 +1,228 @@
+[
+  {
+    "ticket_id": "ADV-001",
+    "assigned_priority": "Critical",
+    "inferred_severity": "Medium",
+    "mismatch_type": "False Alarm",
+    "severity_delta": "-2 levels (Critical->Medium); score \u0394=-0.51",
+    "feature_evidence": [
+      {
+        "signal": "text",
+        "value": "I just need to know what your business hours are, but this is extremely urgent and critical so please respond immediately!!",
+        "interpretation": "semantic content reads as 'Medium' severity"
+      },
+      {
+        "signal": "keyword",
+        "value": "urgent",
+        "weight": "0.04 (urgency phrasing \u2014 discounted)"
+      },
+      {
+        "signal": "keyword",
+        "value": "immediately",
+        "weight": "0.04 (urgency phrasing \u2014 discounted)"
+      },
+      {
+        "signal": "keyword",
+        "value": "critical",
+        "weight": "0.04 (urgency phrasing \u2014 discounted)"
+      },
+      {
+        "signal": "keyword",
+        "value": "please respond",
+        "weight": "0.04 (urgency phrasing \u2014 discounted)"
+      },
+      {
+        "signal": "keyword",
+        "value": "business hours",
+        "weight": "-0.22 (trivial/routine cue, lowers severity)"
+      },
+      {
+        "signal": "resolution_time",
+        "value": "8h",
+        "interpretation": "8h to resolve \u2014 faster than typical for 'Critical' (~12h)"
+      }
+    ],
+    "constraint_analysis": "The request is routine ('Medium'-level), yet it was escalated to 'Critical'. Resolution took 8h (faster than typical for 'Critical' (~12h)). This over-prioritized ticket is a False Alarm (severity gap -2 levels).",
+    "confidence": 0.99
+  },
+  {
+    "ticket_id": "ADV-002",
+    "assigned_priority": "High",
+    "inferred_severity": "Low",
+    "mismatch_type": "False Alarm",
+    "severity_delta": "-2 levels (High->Low); score \u0394=-0.43",
+    "feature_evidence": [
+      {
+        "signal": "text",
+        "value": "Could you tell me if you offer a student discount, it is an emergency and I need this answered ASAP!",
+        "interpretation": "semantic content reads as 'Low' severity"
+      },
+      {
+        "signal": "keyword",
+        "value": "asap",
+        "weight": "0.04 (urgency phrasing \u2014 discounted)"
+      },
+      {
+        "signal": "keyword",
+        "value": "emergency",
+        "weight": "0.04 (urgency phrasing \u2014 discounted)"
+      },
+      {
+        "signal": "keyword",
+        "value": "discount",
+        "weight": "-0.22 (trivial/routine cue, lowers severity)"
+      },
+      {
+        "signal": "keyword",
+        "value": "tell me",
+        "weight": "-0.22 (trivial/routine cue, lowers severity)"
+      },
+      {
+        "signal": "resolution_time",
+        "value": "20h",
+        "interpretation": "20h to resolve \u2014 near typical for 'High' (~24h)"
+      }
+    ],
+    "constraint_analysis": "The request is routine ('Low'-level), yet it was escalated to 'High'. Resolution took 20h (near typical for 'High' (~24h)). This over-prioritized ticket is a False Alarm (severity gap -2 levels).",
+    "confidence": 0.977
+  },
+  {
+    "ticket_id": "ADV-004",
+    "assigned_priority": "Low",
+    "inferred_severity": "Medium",
+    "mismatch_type": "Hidden Crisis",
+    "severity_delta": "+1 levels (Low->Medium); score \u0394=+0.29",
+    "feature_evidence": [
+      {
+        "signal": "text",
+        "value": "No rush at all, but I noticed I have been billed 4800 dollars instead of 48 for three months straight.",
+        "interpretation": "semantic content reads as 'Medium' severity"
+      },
+      {
+        "signal": "resolution_time",
+        "value": "55h",
+        "interpretation": "55h to resolve \u2014 near typical for 'Low' (~45h)"
+      },
+      {
+        "signal": "customer_tier",
+        "value": "company.com",
+        "interpretation": "business-domain customer \u2014 higher impact if under-served"
+      }
+    ],
+    "constraint_analysis": "The content indicates 'Medium' severity, yet it was logged as 'Low'. Resolution took 55h (near typical for 'Low' (~45h)). This under-prioritized ticket is a Hidden Crisis (severity gap +1 levels).",
+    "confidence": 0.815
+  },
+  {
+    "ticket_id": "ADV-006",
+    "assigned_priority": "Low",
+    "inferred_severity": "High",
+    "mismatch_type": "Hidden Crisis",
+    "severity_delta": "+2 levels (Low->High); score \u0394=+0.55",
+    "feature_evidence": [
+      {
+        "signal": "text",
+        "value": "Everything looks great, except the app deleted all of my saved work and there seems to be no way to get it back.",
+        "interpretation": "semantic content reads as 'High' severity"
+      },
+      {
+        "signal": "keyword",
+        "value": "deleted all",
+        "weight": "0.26 (critical cue)"
+      },
+      {
+        "signal": "resolution_time",
+        "value": "50h",
+        "interpretation": "50h to resolve \u2014 near typical for 'Low' (~45h)"
+      },
+      {
+        "signal": "category",
+        "value": "Technical",
+        "interpretation": "'Technical' issues skew high-severity in this dataset"
+      }
+    ],
+    "constraint_analysis": "The content indicates 'High' severity, yet it was logged as 'Low'. Resolution took 50h (near typical for 'Low' (~45h)). This under-prioritized ticket is a Hidden Crisis (severity gap +2 levels).",
+    "confidence": 0.991
+  },
+  {
+    "ticket_id": "ADV-007",
+    "assigned_priority": "Low",
+    "inferred_severity": "Medium",
+    "mismatch_type": "Hidden Crisis",
+    "severity_delta": "+1 levels (Low->Medium); score \u0394=+0.40",
+    "feature_evidence": [
+      {
+        "signal": "text",
+        "value": "It is honestly not a big deal, I just cannot process any customer payments and have lost several sales today.",
+        "interpretation": "semantic content reads as 'Medium' severity"
+      },
+      {
+        "signal": "keyword",
+        "value": "cannot",
+        "weight": "0.11 (high-severity cue)"
+      },
+      {
+        "signal": "keyword",
+        "value": "cannot process",
+        "weight": "0.11 (high-severity cue)"
+      },
+      {
+        "signal": "resolution_time",
+        "value": "52h",
+        "interpretation": "52h to resolve \u2014 near typical for 'Low' (~45h)"
+      },
+      {
+        "signal": "customer_tier",
+        "value": "company.com",
+        "interpretation": "business-domain customer \u2014 higher impact if under-served"
+      }
+    ],
+    "constraint_analysis": "The content indicates 'Medium' severity, yet it was logged as 'Low'. Resolution took 52h (near typical for 'Low' (~45h)). This under-prioritized ticket is a Hidden Crisis (severity gap +1 levels).",
+    "confidence": 0.962
+  },
+  {
+    "ticket_id": "ADV-010",
+    "assigned_priority": "Critical",
+    "inferred_severity": "Medium",
+    "mismatch_type": "False Alarm",
+    "severity_delta": "-2 levels (Critical->Medium); score \u0394=-0.42",
+    "feature_evidence": [
+      {
+        "signal": "text",
+        "value": "I forgot my password and the reset email is not arriving, urgent urgent urgent please help right now!!",
+        "interpretation": "semantic content reads as 'Medium' severity"
+      },
+      {
+        "signal": "keyword",
+        "value": "urgent",
+        "weight": "0.04 (urgency phrasing \u2014 discounted)"
+      },
+      {
+        "signal": "keyword",
+        "value": "right now",
+        "weight": "0.04 (urgency phrasing \u2014 discounted)"
+      },
+      {
+        "signal": "keyword",
+        "value": "please help",
+        "weight": "0.04 (urgency phrasing \u2014 discounted)"
+      },
+      {
+        "signal": "keyword",
+        "value": "password",
+        "weight": "-0.22 (trivial/routine cue, lowers severity)"
+      },
+      {
+        "signal": "keyword",
+        "value": "reset email",
+        "weight": "-0.22 (trivial/routine cue, lowers severity)"
+      },
+      {
+        "signal": "resolution_time",
+        "value": "9h",
+        "interpretation": "9h to resolve \u2014 near typical for 'Critical' (~12h)"
+      }
+    ],
+    "constraint_analysis": "The request is routine ('Medium'-level), yet it was escalated to 'Critical'. Resolution took 9h (near typical for 'Critical' (~12h)). This over-prioritized ticket is a False Alarm (severity gap -2 levels).",
+    "confidence": 0.967
+  }
+]

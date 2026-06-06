@@ -1,0 +1,23 @@
+{
+  "accuracy": 0.915,
+  "macro_f1": 0.8743047946066406,
+  "recall_consistent": 0.9085714285714286,
+  "recall_mismatch": 0.9436363636363636,
+  "confusion_matrix": [
+    [
+      2226,
+      224
+    ],
+    [
+      31,
+      519
+    ]
+  ],
+  "thresholds": {
+    "accuracy": 0.83,
+    "macro_f1": 0.82,
+    "per_class_recall": 0.78
+  },
+  "PASSED": true,
+  "n_test": 3000
+}

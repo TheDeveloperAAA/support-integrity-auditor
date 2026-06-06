@@ -1,0 +1,19 @@
+{
+  "tau": 0.395,
+  "positive_rate_overall": 0.1829,
+  "positive_rate_train": 0.1828,
+  "positive_rate_test": 0.1833,
+  "n_hidden_crisis": 3133,
+  "n_false_alarm": 525,
+  "signal_agreement": {
+    "text_vs_embed": 0.6571,
+    "text_vs_rt": 0.5483,
+    "embed_vs_rt": 0.6028
+  },
+  "primary_signal_agreement_text_vs_embed": 0.6571,
+  "fusion_weights": {
+    "text_rule": 0.45,
+    "embedding": 0.35,
+    "resolution_time": 0.2
+  }
+}

@@ -1,0 +1,29 @@
+# Support Integrity Auditor (SIA) — pinned dependencies
+# Python 3.11.  Verified import-clean on macOS (MPS) and Linux CPU (HF Spaces).
+
+# --- core data / ml ---
+numpy==2.2.6
+pandas==2.3.3
+scikit-learn==1.8.0
+imbalanced-learn==0.14.1
+
+# --- deep learning / NLP ---
+torch==2.9.1
+transformers==5.10.2
+tokenizers==0.22.2
+safetensors==0.7.0
+sentencepiece==0.2.1
+protobuf==7.35.0
+accelerate==1.13.0
+peft==0.19.1
+datasets==5.0.0
+sentence-transformers==5.5.1
+
+# --- app / viz ---
+streamlit==1.55.0
+plotly==6.6.0
+matplotlib==3.10.8
+
+# --- deploy / misc ---
+huggingface_hub==1.18.0
+certifi==2026.5.20
