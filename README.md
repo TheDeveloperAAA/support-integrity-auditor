@@ -167,8 +167,8 @@ streamlit run app/streamlit_app.py # local app
 
 ## 8. Live demo & deployment
 
-- **Streamlit app (hosted):** {{HF_URL}}
-- **Source:** {{GH_URL}}
+- **Streamlit app (hosted):** https://huggingface.co/spaces/rajtheman/support-integrity-auditor
+- **Source:** https://github.com/TheDeveloperAAA/support-integrity-auditor
 
 Deployment is automated in `deploy.py` (`--github` / `--hf`).
 

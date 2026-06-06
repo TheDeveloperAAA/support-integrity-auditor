@@ -56,9 +56,8 @@ title: Support Integrity Auditor
 emoji: 🛡️
 colorFrom: indigo
 colorTo: red
-sdk: streamlit
-sdk_version: {sdk}
-app_file: app/streamlit_app.py
+sdk: docker
+app_port: 7860
 pinned: false
 license: mit
 ---
@@ -75,17 +74,17 @@ a hallucination-free **Evidence Dossier** for every flagged case.
 """
 
 def deploy_hf():
-    import streamlit
     from huggingface_hub import HfApi
     hf = _tok(C.HF_TOKEN_FILE)
     api = HfApi(token=hf)
     user = api.whoami()["name"]
     repo_id = f"{user}/{C.HF_SPACE_NAME}"
-    api.create_repo(repo_id, repo_type="space", space_sdk="streamlit", exist_ok=True)
+    # HF runs Streamlit Spaces via the Docker SDK (a Dockerfile runs streamlit).
+    api.create_repo(repo_id, repo_type="space", space_sdk="docker", exist_ok=True)
 
     # Space README with front-matter (separate from the repo's methodology README)
     sp = ROOT / ".hf_space_README.md"
-    sp.write_text(SPACE_README.format(sdk=streamlit.__version__))
+    sp.write_text(SPACE_README)
     api.upload_file(path_or_fileobj=str(sp), path_in_repo="README.md",
                     repo_id=repo_id, repo_type="space")
     sp.unlink()
@@ -101,6 +100,8 @@ def deploy_hf():
             # PII-bearing intermediate parquets — keep only the slim dashboard.parquet
             "artifacts/data/pseudo_labeled.parquet", "artifacts/data/processed.parquet",
             "artifacts/data/test_predictions.parquet", "artifacts/predictions/**",
+            # training checkpoints / optimizer state — not needed for inference
+            "**/checkpoint-*/**", "**/optimizer.pt", "**/training_args.bin",
         ],
     )
     print(f"[hf] Space live -> https://huggingface.co/spaces/{repo_id}")
